@@ -7,34 +7,20 @@ const Footer = () => {
             <div className="container mx-auto max-w-7xl">
                 <div className="grid md:grid-cols-2 gap-12 mb-12">
                     <div>
-                        <h5 className="text-[0.95rem] font-bold mb-5 text-text-primary">Developer</h5>
+                        <h5 className="text-[0.95rem] font-bold mb-5 text-text-primary">Team Members</h5>
                         <div className="developer-card">
-                            <p className="font-bold text-text-primary mb-0.5">Md Emon Hasan</p>
-                            <p className="text-text-secondary text-[0.82rem] mb-4">AI/ML Engineer | Generative AI | Agentic AI</p>
-                            <div className="flex flex-wrap gap-2.5">
-                                <a href="https://github.com/Md-Emon-Hasan" target="_blank" className="inline-flex items-center gap-2 px-3 py-1.5 border border-border rounded-md text-text-secondary hover:bg-bg-hover hover:text-accent hover:border-accent transition-all text-xs font-medium decoration-0">
-                                    <Github size={14} /> GitHub
-                                </a>
-                                <a href="https://www.linkedin.com/in/md-emon-hasan-695483237/" target="_blank" className="inline-flex items-center gap-2 px-3 py-1.5 border border-border rounded-md text-text-secondary hover:bg-bg-hover hover:text-accent hover:border-accent transition-all text-xs font-medium decoration-0">
-                                    <Linkedin size={14} /> LinkedIn
-                                </a>
-                                <a href="https://wa.me/8801834363533" target="_blank" className="inline-flex items-center gap-2 px-3 py-1.5 border border-border rounded-md text-text-secondary hover:bg-bg-hover hover:text-accent hover:border-accent transition-all text-xs font-medium decoration-0">
-                                    <MessageSquare size={14} /> WhatsApp
-                                </a>
-                                <a href="https://www.facebook.com/mdemon.hasan2001/" target="_blank" className="inline-flex items-center gap-2 px-3 py-1.5 border border-border rounded-md text-text-secondary hover:bg-bg-hover hover:text-accent hover:border-accent transition-all text-xs font-medium decoration-0">
-                                    <Facebook size={14} /> Facebook
-                                </a>
-                            </div>
+                            <p className="font-bold text-text-primary mb-0.5">K Mounika,M kamalini,L Kavyanjali</p>
+                            <p className="text-text-secondary text-[0.82rem] mb-4">AI/ML Dept</p>
                         </div>
                     </div>
                     <div>
                         <h5 className="text-[0.95rem] font-bold mb-5 text-text-primary">Contact</h5>
                         <ul className="list-none space-y-3.5">
                             <li className="flex items-center gap-3 text-text-secondary text-[0.88rem]">
-                                <MapPin size={16} className="text-accent shrink-0" /> Dhaka, Bangladesh
+                                <MapPin size={16} className="text-accent shrink-0" />Hyderabad
                             </li>
                             <li className="flex items-center gap-3 text-text-secondary text-[0.88rem]">
-                                <Mail size={16} className="text-accent shrink-0" /> emon.mlengineer@gmail.com
+                                <Mail size={16} className="text-accent shrink-0" /> booksageAI@gmail.com
                             </li>
                             <li className="flex items-center gap-3 text-text-secondary text-[0.88rem]">
                                 <Phone size={16} className="text-accent shrink-0" /> +880 1834 363 533

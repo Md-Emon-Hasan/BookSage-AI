@@ -3455,3 +3455,17 @@
 2026-03-02 22:39:17 - booksage - INFO - Loading models and processed data...
 2026-03-02 22:39:17 - booksage - INFO - All models loaded from: C:\Users\emon1\Desktop\zzz\BookSage-AI\backend\app\models
 2026-03-02 22:39:17 - booksage - INFO - Models loaded successfully!
+2026-04-05 18:00:32 - booksage - INFO - Starting BookSage-AI application...
+2026-04-05 18:00:32 - booksage - INFO - Checking for existing trained models...
+2026-04-05 18:00:32 - booksage - INFO - Loading models and processed data...
+2026-04-05 18:00:33 - booksage - INFO - All models loaded from: /app/app/models
+2026-04-05 18:00:33 - booksage - INFO - Models loaded successfully!
+2026-04-05 18:03:29 - booksage - DEBUG - Search for 'Bridget Jones's Diary' returned 4 results
+2026-04-05 18:03:35 - booksage - INFO - Generated 10 collaborative recommendations for 'Bridget Jones's Diary'
+2026-04-05 18:04:04 - booksage - DEBUG - Search for 'The Lovely Bones: A Novel' returned 1 results
+2026-04-05 18:04:21 - booksage - INFO - Generated 10 content recommendations for 'The Lovely Bones: A Novel'
+2026-04-05 18:04:26 - booksage - DEBUG - Generating hybrid recommendations for: The Lovely Bones: A Novel
+2026-04-05 18:04:26 - booksage - DEBUG - Generated 10 hybrid recommendations
+2026-04-05 18:04:26 - booksage - INFO - Generated 10 hybrid recommendations for 'The Lovely Bones: A Novel'
+2026-04-05 18:04:28 - booksage - INFO - Generated 10 collaborative recommendations for 'The Lovely Bones: A Novel'
+2026-04-05 18:04:31 - booksage - INFO - Generated 10 content recommendations for 'The Lovely Bones: A Novel'
