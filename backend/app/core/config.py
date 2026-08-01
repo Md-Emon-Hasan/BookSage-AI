@@ -38,6 +38,18 @@ class Config:
     PORT = 8000
     DEBUG = False
 
+    # Caching settings (in-memory, TTL-based)
+    CACHE_ENABLED = True
+    CACHE_TTL_SECONDS = 3600
+    CACHE_MAXSIZE = 1000
+    POPULAR_CACHE_TTL_SECONDS = 86400
+
+    # Rate limiting settings
+    RATE_LIMIT_ENABLED = True
+    RATE_LIMIT_RECOMMEND = "30/minute"
+    RATE_LIMIT_SEARCH = "60/minute"
+    RATE_LIMIT_POPULAR = "60/minute"
+
     @classmethod
     def ensure_directories(cls) -> None:
         """Create required directories if they don't exist."""

@@ -148,3 +148,16 @@ def test_client(mock_engine):
         from app.main import app
         client = TestClient(app)
         yield client
+
+
+@pytest.fixture(autouse=True)
+def _reset_cache_and_rate_limiter():
+    """Clear the response cache and reset rate-limit counters between tests."""
+    from app.core.cache import clear_cache
+    from app.main import app
+
+    clear_cache()
+    app.state.limiter.reset()
+    yield
+    clear_cache()
+    app.state.limiter.reset()

@@ -3455,3 +3455,390 @@
 2026-03-02 22:39:17 - booksage - INFO - Loading models and processed data...
 2026-03-02 22:39:17 - booksage - INFO - All models loaded from: C:\Users\emon1\Desktop\zzz\BookSage-AI\backend\app\models
 2026-03-02 22:39:17 - booksage - INFO - Models loaded successfully!
+2026-08-01 19:28:48 - booksage - INFO - Starting BookSage-AI application...
+2026-08-01 19:28:48 - booksage - INFO - Checking for existing trained models...
+2026-08-01 19:28:48 - booksage - INFO - Loading models and processed data...
+2026-08-01 19:28:49 - booksage - INFO - All models loaded from: C:\Users\emon1\Desktop\project\BookSage-AI\backend\app\models
+2026-08-01 19:28:49 - booksage - INFO - Models loaded successfully!
+2026-08-01 19:30:17 - booksage - DEBUG - Cache hit for prefix 'popular'
+2026-08-01 19:30:32 - booksage - DEBUG - Cache hit for prefix 'test-hit'
+2026-08-01 19:30:33 - booksage - DEBUG - Cache hit for prefix 'test-normalize'
+2026-08-01 19:30:33 - booksage - DEBUG - Cache hit for prefix 'test-kwarg-order'
+2026-08-01 19:30:33 - booksage - DEBUG - Cache hit for prefix 'test-non-string'
+2026-08-01 19:30:33 - booksage - DEBUG - Cache hit for prefix 'test-nonempty'
+2026-08-01 19:30:33 - booksage - DEBUG - Cache hit for prefix 'test-clear'
+2026-08-01 19:30:33 - booksage - DEBUG - Cache hit for prefix 'test-stats'
+2026-08-01 19:30:33 - booksage - INFO - Training collaborative filtering model...
+2026-08-01 19:30:33 - booksage - INFO - Collaborative filtering model trained successfully
+2026-08-01 19:30:33 - booksage - INFO - Training collaborative filtering model...
+2026-08-01 19:30:33 - booksage - INFO - Collaborative filtering model trained successfully
+2026-08-01 19:30:33 - booksage - WARNING - Model not trained yet
+2026-08-01 19:30:33 - booksage - INFO - Training collaborative filtering model...
+2026-08-01 19:30:33 - booksage - INFO - Collaborative filtering model trained successfully
+2026-08-01 19:30:33 - booksage - WARNING - Book 'Nonexistent Book' not found in collaborative filtering data
+2026-08-01 19:30:33 - booksage - INFO - Training collaborative filtering model...
+2026-08-01 19:30:33 - booksage - INFO - Collaborative filtering model trained successfully
+2026-08-01 19:30:33 - booksage - INFO - Training collaborative filtering model...
+2026-08-01 19:30:33 - booksage - ERROR - Error training collaborative filtering model: 'rating'
+2026-08-01 19:30:33 - booksage - INFO - Training collaborative filtering model...
+2026-08-01 19:30:33 - booksage - INFO - Collaborative filtering model trained successfully
+2026-08-01 19:30:34 - booksage - INFO - Training collaborative filtering model...
+2026-08-01 19:30:34 - booksage - INFO - Collaborative filtering model trained successfully
+2026-08-01 19:30:34 - booksage - ERROR - Error in collaborative recommendations: 'NoneType' object is not subscriptable
+2026-08-01 19:30:34 - booksage - INFO - Training collaborative filtering model...
+2026-08-01 19:30:34 - booksage - INFO - Collaborative filtering model trained successfully
+2026-08-01 19:30:34 - booksage - INFO - Training content-based model...
+2026-08-01 19:30:34 - booksage - INFO - Content-based model trained successfully
+2026-08-01 19:30:34 - booksage - INFO - Training content-based model...
+2026-08-01 19:30:34 - booksage - INFO - Content-based model trained successfully
+2026-08-01 19:30:34 - booksage - INFO - Training content-based model...
+2026-08-01 19:30:34 - booksage - INFO - Content-based model trained successfully
+2026-08-01 19:30:34 - booksage - WARNING - Model not trained yet
+2026-08-01 19:30:34 - booksage - INFO - Training content-based model...
+2026-08-01 19:30:34 - booksage - INFO - Content-based model trained successfully
+2026-08-01 19:30:34 - booksage - WARNING - Book 'Nonexistent Book' not found in content-based data
+2026-08-01 19:30:34 - booksage - INFO - Training content-based model...
+2026-08-01 19:30:34 - booksage - INFO - Content-based model trained successfully
+2026-08-01 19:30:34 - booksage - INFO - Training content-based model...
+2026-08-01 19:30:34 - booksage - INFO - Content-based model trained successfully
+2026-08-01 19:30:34 - booksage - INFO - Training content-based model...
+2026-08-01 19:30:34 - booksage - ERROR - Error training content-based model: 'content_features'
+2026-08-01 19:30:34 - booksage - INFO - Training content-based model...
+2026-08-01 19:30:34 - booksage - INFO - Content-based model trained successfully
+2026-08-01 19:30:34 - booksage - ERROR - Error in content recommendations: 'NoneType' object is not subscriptable
+2026-08-01 19:30:34 - booksage - INFO - Books data loaded successfully. Shape: (5, 6)
+2026-08-01 19:30:34 - booksage - ERROR - Error loading books data: [Errno 2] No such file or directory: 'C:\\Users\\emon1\\AppData\\Local\\Temp\\pytest-of-emon1\\pytest-4\\test_load_books_file_not_found0\\nonexistent.csv'
+2026-08-01 19:30:34 - booksage - INFO - Users data loaded successfully. Shape: (5, 3)
+2026-08-01 19:30:34 - booksage - ERROR - Error loading users data: [Errno 2] No such file or directory: 'C:\\Users\\emon1\\AppData\\Local\\Temp\\pytest-of-emon1\\pytest-4\\test_load_users_file_not_found0\\nonexistent.csv'
+2026-08-01 19:30:34 - booksage - INFO - Ratings data loaded successfully. Shape: (10, 3)
+2026-08-01 19:30:34 - booksage - ERROR - Error loading ratings data: [Errno 2] No such file or directory: 'C:\\Users\\emon1\\AppData\\Local\\Temp\\pytest-of-emon1\\pytest-4\\test_load_ratings_file_not_fou0\\nonexistent.csv'
+2026-08-01 19:30:34 - booksage - INFO - Filtered to 4 active users
+2026-08-01 19:30:34 - booksage - INFO - Merged data shape: (10, 8)
+2026-08-01 19:30:35 - booksage - INFO - Merged data shape: (10, 8)
+2026-08-01 19:30:35 - booksage - INFO - Final rating data shape: (10, 9)
+2026-08-01 19:30:35 - booksage - ERROR - Must call merge_ratings_with_books first
+2026-08-01 19:30:35 - booksage - INFO - Merged data shape: (10, 8)
+2026-08-01 19:30:35 - booksage - INFO - Final rating data shape: (10, 9)
+2026-08-01 19:30:35 - booksage - INFO - Books content shape: (5, 7)
+2026-08-01 19:30:35 - booksage - ERROR - Must call filter_popular_books first
+2026-08-01 19:30:35 - booksage - INFO - Merged data shape: (10, 8)
+2026-08-01 19:30:35 - booksage - INFO - Final rating data shape: (10, 9)
+2026-08-01 19:30:35 - booksage - INFO - Books content shape: (5, 7)
+2026-08-01 19:30:35 - booksage - INFO - Filtered to 4 active users
+2026-08-01 19:30:35 - booksage - INFO - Merged data shape: (9, 8)
+2026-08-01 19:30:35 - booksage - INFO - Final rating data shape: (9, 9)
+2026-08-01 19:30:35 - booksage - INFO - Books content shape: (5, 7)
+2026-08-01 19:30:35 - booksage - INFO - Generated 1 hybrid recommendations for 'The Great Gatsby'
+2026-08-01 19:30:35 - booksage - INFO - Generated 1 collaborative recommendations for 'The Great Gatsby'
+2026-08-01 19:30:35 - booksage - INFO - Generated 1 content recommendations for 'The Great Gatsby'
+2026-08-01 19:30:35 - booksage - DEBUG - Search for 'gatsby' returned 1 results
+2026-08-01 19:30:36 - booksage - WARNING - Engine not ready for search
+2026-08-01 19:30:36 - booksage - DEBUG - Search for 'test' returned 1 results
+2026-08-01 19:30:36 - booksage - DEBUG - Search for 'test' returned 3 results
+2026-08-01 19:30:36 - booksage - INFO - Starting BookSage-AI application...
+2026-08-01 19:30:36 - booksage - WARNING - No pre-trained models found. Please train models first using the training script.
+2026-08-01 19:30:36 - booksage - INFO - Shutting down BookSage-AI application...
+2026-08-01 19:30:36 - booksage - INFO - Starting BookSage-AI application...
+2026-08-01 19:30:36 - booksage - INFO - Shutting down BookSage-AI application...
+2026-08-01 19:30:37 - booksage - DEBUG - Generating hybrid recommendations for: Test Book
+2026-08-01 19:30:37 - booksage - DEBUG - Generated 3 hybrid recommendations
+2026-08-01 19:30:37 - booksage - DEBUG - Generating hybrid recommendations for: Test Book
+2026-08-01 19:30:37 - booksage - DEBUG - Generated 3 hybrid recommendations
+2026-08-01 19:30:37 - booksage - DEBUG - Generating hybrid recommendations for: Test Book
+2026-08-01 19:30:37 - booksage - WARNING - No recommendations found from either model
+2026-08-01 19:30:37 - booksage - DEBUG - Generating hybrid recommendations for: Test Book
+2026-08-01 19:30:37 - booksage - DEBUG - Generated 2 hybrid recommendations
+2026-08-01 19:30:37 - booksage - DEBUG - Generating hybrid recommendations for: Test Book
+2026-08-01 19:30:37 - booksage - DEBUG - Generated 2 hybrid recommendations
+2026-08-01 19:30:37 - booksage - DEBUG - Generating hybrid recommendations for: Test Book
+2026-08-01 19:30:37 - booksage - DEBUG - Generated 3 hybrid recommendations
+2026-08-01 19:30:37 - booksage - DEBUG - Generating hybrid recommendations for: Test Book
+2026-08-01 19:30:37 - booksage - DEBUG - Generated 3 hybrid recommendations
+2026-08-01 19:30:37 - booksage - DEBUG - Generating hybrid recommendations for: Test Book
+2026-08-01 19:30:37 - booksage - ERROR - Error in hybrid recommendations: Test error
+2026-08-01 19:30:37 - booksage - INFO - Saving models and processed data...
+2026-08-01 19:30:37 - booksage - DEBUG - Saved: cf_model.pkl
+2026-08-01 19:30:37 - booksage - DEBUG - Saved: cb_model.pkl
+2026-08-01 19:30:37 - booksage - DEBUG - Saved: book_pivot.pkl
+2026-08-01 19:30:37 - booksage - DEBUG - Saved: tfidf_vectorizer.pkl
+2026-08-01 19:30:37 - booksage - DEBUG - Saved: content_sim_matrix.pkl
+2026-08-01 19:30:37 - booksage - DEBUG - Saved: title_to_idx.pkl
+2026-08-01 19:30:37 - booksage - DEBUG - Saved: books_content.pkl
+2026-08-01 19:30:37 - booksage - DEBUG - Saved: final_rating.pkl
+2026-08-01 19:30:37 - booksage - DEBUG - Saved: books_data.pkl
+2026-08-01 19:30:37 - booksage - INFO - All models saved to: C:\Users\emon1\AppData\Local\Temp\pytest-of-emon1\pytest-4\test_save_models_success0
+2026-08-01 19:30:37 - booksage - INFO - Saving models and processed data...
+2026-08-01 19:30:37 - booksage - ERROR - Error saving models: [Errno 2] No such file or directory: '\\invalid\\path\\that\\does\\not\\exist\\cf_model.pkl'
+2026-08-01 19:30:37 - booksage - INFO - Saving models and processed data...
+2026-08-01 19:30:37 - booksage - DEBUG - Saved: cf_model.pkl
+2026-08-01 19:30:37 - booksage - DEBUG - Saved: cb_model.pkl
+2026-08-01 19:30:37 - booksage - DEBUG - Saved: book_pivot.pkl
+2026-08-01 19:30:37 - booksage - DEBUG - Saved: tfidf_vectorizer.pkl
+2026-08-01 19:30:37 - booksage - DEBUG - Saved: content_sim_matrix.pkl
+2026-08-01 19:30:37 - booksage - DEBUG - Saved: title_to_idx.pkl
+2026-08-01 19:30:37 - booksage - DEBUG - Saved: books_content.pkl
+2026-08-01 19:30:37 - booksage - DEBUG - Saved: final_rating.pkl
+2026-08-01 19:30:37 - booksage - DEBUG - Saved: books_data.pkl
+2026-08-01 19:30:37 - booksage - INFO - All models saved to: C:\Users\emon1\AppData\Local\Temp\pytest-of-emon1\pytest-4\test_load_models_success0
+2026-08-01 19:30:37 - booksage - INFO - Loading models and processed data...
+2026-08-01 19:30:37 - booksage - INFO - All models loaded from: C:\Users\emon1\AppData\Local\Temp\pytest-of-emon1\pytest-4\test_load_models_success0
+2026-08-01 19:30:37 - booksage - INFO - Loading models and processed data...
+2026-08-01 19:30:37 - booksage - ERROR - Required file not found: cf_model.pkl
+2026-08-01 19:30:37 - booksage - INFO - Loading models and processed data...
+2026-08-01 19:30:37 - booksage - ERROR - Required file not found: cb_model.pkl
+2026-08-01 19:30:37 - booksage - INFO - Loading models and processed data...
+2026-08-01 19:30:37 - booksage - ERROR - Error loading models: pickle data was truncated
+2026-08-01 19:30:37 - booksage - INFO - Saving models and processed data...
+2026-08-01 19:30:37 - booksage - DEBUG - Saved: cf_model.pkl
+2026-08-01 19:30:37 - booksage - DEBUG - Saved: cb_model.pkl
+2026-08-01 19:30:37 - booksage - DEBUG - Saved: book_pivot.pkl
+2026-08-01 19:30:37 - booksage - DEBUG - Saved: tfidf_vectorizer.pkl
+2026-08-01 19:30:37 - booksage - DEBUG - Saved: content_sim_matrix.pkl
+2026-08-01 19:30:37 - booksage - DEBUG - Saved: title_to_idx.pkl
+2026-08-01 19:30:37 - booksage - DEBUG - Saved: books_content.pkl
+2026-08-01 19:30:37 - booksage - DEBUG - Saved: final_rating.pkl
+2026-08-01 19:30:37 - booksage - DEBUG - Saved: books_data.pkl
+2026-08-01 19:30:37 - booksage - INFO - All models saved to: C:\Users\emon1\AppData\Local\Temp\pytest-of-emon1\pytest-4\test_models_exist_true0
+2026-08-01 19:30:38 - booksage - DEBUG - Cache hit for prefix 'popular'
+2026-08-01 19:30:38 - booksage - DEBUG - Cache hit for prefix 'popular'
+2026-08-01 19:30:38 - booksage - DEBUG - Cache hit for prefix 'popular'
+2026-08-01 19:30:38 - booksage - DEBUG - Cache hit for prefix 'popular'
+2026-08-01 19:30:38 - booksage - INFO - Generated 1 hybrid recommendations for 'The Great Gatsby'
+2026-08-01 19:30:38 - booksage - DEBUG - Cache hit for prefix 'recommend'
+2026-08-01 19:30:38 - booksage - INFO - Generated 1 hybrid recommendations for 'The Great Gatsby'
+2026-08-01 19:30:38 - booksage - DEBUG - Cache hit for prefix 'recommend'
+2026-08-01 19:30:38 - booksage - INFO - Generated 1 hybrid recommendations for 'The Great Gatsby'
+2026-08-01 19:30:39 - booksage - DEBUG - Cache hit for prefix 'recommend'
+2026-08-01 19:30:39 - booksage - INFO - Generated 1 hybrid recommendations for 'The Great Gatsby'
+2026-08-01 19:30:40 - booksage - DEBUG - Cache hit for prefix 'recommend'
+2026-08-01 19:30:40 - booksage - INFO - Generated 1 hybrid recommendations for 'The Great Gatsby'
+2026-08-01 19:30:40 - booksage - DEBUG - Cache hit for prefix 'recommend'
+2026-08-01 19:30:40 - booksage - INFO - Generated 1 hybrid recommendations for 'The Great Gatsby'
+2026-08-01 19:30:40 - booksage - DEBUG - Cache hit for prefix 'popular'
+2026-08-01 19:30:41 - booksage - DEBUG - Cache hit for prefix 'recommend'
+2026-08-01 19:30:41 - booksage - INFO - Generated 1 hybrid recommendations for 'The Great Gatsby'
+2026-08-01 19:30:41 - booksage - DEBUG - Cache hit for prefix 'popular'
+2026-08-01 19:30:41 - booksage - DEBUG - Cache hit for prefix 'recommend'
+2026-08-01 19:30:41 - booksage - INFO - Generated 1 hybrid recommendations for 'The Great Gatsby'
+2026-08-01 19:30:41 - booksage - DEBUG - Cache hit for prefix 'recommend'
+2026-08-01 19:30:41 - booksage - INFO - Generated 1 hybrid recommendations for 'The Great Gatsby'
+2026-08-01 19:30:42 - booksage - DEBUG - Cache hit for prefix 'recommend'
+2026-08-01 19:30:42 - booksage - INFO - Generated 1 hybrid recommendations for 'The Great Gatsby'
+2026-08-01 19:30:42 - booksage - DEBUG - Cache hit for prefix 'recommend'
+2026-08-01 19:30:42 - booksage - INFO - Generated 1 hybrid recommendations for 'The Great Gatsby'
+2026-08-01 19:30:42 - booksage - DEBUG - Cache hit for prefix 'recommend'
+2026-08-01 19:30:42 - booksage - INFO - Generated 1 hybrid recommendations for 'The Great Gatsby'
+2026-08-01 19:30:42 - booksage - DEBUG - Cache hit for prefix 'recommend'
+2026-08-01 19:30:42 - booksage - INFO - Generated 1 hybrid recommendations for 'The Great Gatsby'
+2026-08-01 19:30:43 - booksage - DEBUG - Cache hit for prefix 'recommend'
+2026-08-01 19:30:43 - booksage - INFO - Generated 1 hybrid recommendations for 'The Great Gatsby'
+2026-08-01 19:30:43 - booksage - DEBUG - Cache hit for prefix 'recommend'
+2026-08-01 19:30:43 - booksage - INFO - Generated 1 hybrid recommendations for 'The Great Gatsby'
+2026-08-01 19:30:43 - booksage - DEBUG - Cache hit for prefix 'recommend'
+2026-08-01 19:30:43 - booksage - INFO - Generated 1 hybrid recommendations for 'The Great Gatsby'
+2026-08-01 19:30:43 - booksage - DEBUG - Cache hit for prefix 'recommend'
+2026-08-01 19:30:43 - booksage - INFO - Generated 1 hybrid recommendations for 'The Great Gatsby'
+2026-08-01 19:30:43 - booksage - DEBUG - Cache hit for prefix 'recommend'
+2026-08-01 19:30:43 - booksage - INFO - Generated 1 hybrid recommendations for 'The Great Gatsby'
+2026-08-01 19:30:43 - booksage - DEBUG - Cache hit for prefix 'recommend'
+2026-08-01 19:30:43 - booksage - INFO - Generated 1 hybrid recommendations for 'The Great Gatsby'
+2026-08-01 19:30:43 - booksage - DEBUG - Cache hit for prefix 'recommend'
+2026-08-01 19:30:43 - booksage - INFO - Generated 1 hybrid recommendations for 'The Great Gatsby'
+2026-08-01 19:30:43 - booksage - DEBUG - Cache hit for prefix 'recommend'
+2026-08-01 19:30:43 - booksage - INFO - Generated 1 hybrid recommendations for 'The Great Gatsby'
+2026-08-01 19:30:43 - booksage - DEBUG - Cache hit for prefix 'recommend'
+2026-08-01 19:30:43 - booksage - INFO - Generated 1 hybrid recommendations for 'The Great Gatsby'
+2026-08-01 19:30:43 - booksage - DEBUG - Cache hit for prefix 'recommend'
+2026-08-01 19:30:43 - booksage - INFO - Generated 1 hybrid recommendations for 'The Great Gatsby'
+2026-08-01 19:30:43 - booksage - DEBUG - Cache hit for prefix 'recommend'
+2026-08-01 19:30:43 - booksage - INFO - Generated 1 hybrid recommendations for 'The Great Gatsby'
+2026-08-01 19:30:43 - booksage - DEBUG - Cache hit for prefix 'recommend'
+2026-08-01 19:30:43 - booksage - INFO - Generated 1 hybrid recommendations for 'The Great Gatsby'
+2026-08-01 19:30:43 - booksage - DEBUG - Cache hit for prefix 'recommend'
+2026-08-01 19:30:43 - booksage - INFO - Generated 1 hybrid recommendations for 'The Great Gatsby'
+2026-08-01 19:30:43 - booksage - DEBUG - Cache hit for prefix 'recommend'
+2026-08-01 19:30:43 - booksage - INFO - Generated 1 hybrid recommendations for 'The Great Gatsby'
+2026-08-01 19:30:43 - booksage - DEBUG - Cache hit for prefix 'recommend'
+2026-08-01 19:30:43 - booksage - INFO - Generated 1 hybrid recommendations for 'The Great Gatsby'
+2026-08-01 19:30:43 - booksage - DEBUG - Cache hit for prefix 'recommend'
+2026-08-01 19:30:43 - booksage - INFO - Generated 1 hybrid recommendations for 'The Great Gatsby'
+2026-08-01 19:30:43 - booksage - DEBUG - Cache hit for prefix 'recommend'
+2026-08-01 19:30:43 - booksage - INFO - Generated 1 hybrid recommendations for 'The Great Gatsby'
+2026-08-01 19:30:43 - booksage - WARNING - Rate limit exceeded for testclient on /api/recommend
+2026-08-01 19:30:43 - booksage - DEBUG - Search for 'gatsby' returned 1 results
+2026-08-01 19:30:43 - booksage - DEBUG - Cache hit for prefix 'search_books'
+2026-08-01 19:30:43 - booksage - DEBUG - Cache hit for prefix 'search_books'
+2026-08-01 19:30:43 - booksage - DEBUG - Cache hit for prefix 'search_books'
+2026-08-01 19:30:43 - booksage - DEBUG - Cache hit for prefix 'search_books'
+2026-08-01 19:30:43 - booksage - DEBUG - Cache hit for prefix 'search_books'
+2026-08-01 19:30:43 - booksage - DEBUG - Cache hit for prefix 'search_books'
+2026-08-01 19:30:43 - booksage - DEBUG - Cache hit for prefix 'search_books'
+2026-08-01 19:30:44 - booksage - DEBUG - Cache hit for prefix 'search_books'
+2026-08-01 19:30:44 - booksage - DEBUG - Cache hit for prefix 'search_books'
+2026-08-01 19:30:44 - booksage - DEBUG - Cache hit for prefix 'search_books'
+2026-08-01 19:30:44 - booksage - DEBUG - Cache hit for prefix 'search_books'
+2026-08-01 19:30:44 - booksage - DEBUG - Cache hit for prefix 'search_books'
+2026-08-01 19:30:44 - booksage - DEBUG - Cache hit for prefix 'search_books'
+2026-08-01 19:30:44 - booksage - DEBUG - Cache hit for prefix 'search_books'
+2026-08-01 19:30:44 - booksage - DEBUG - Cache hit for prefix 'search_books'
+2026-08-01 19:30:44 - booksage - DEBUG - Cache hit for prefix 'search_books'
+2026-08-01 19:30:44 - booksage - DEBUG - Cache hit for prefix 'search_books'
+2026-08-01 19:30:44 - booksage - DEBUG - Cache hit for prefix 'search_books'
+2026-08-01 19:30:44 - booksage - DEBUG - Cache hit for prefix 'search_books'
+2026-08-01 19:30:44 - booksage - DEBUG - Cache hit for prefix 'search_books'
+2026-08-01 19:30:44 - booksage - DEBUG - Cache hit for prefix 'search_books'
+2026-08-01 19:30:44 - booksage - DEBUG - Cache hit for prefix 'search_books'
+2026-08-01 19:30:44 - booksage - DEBUG - Cache hit for prefix 'search_books'
+2026-08-01 19:30:44 - booksage - DEBUG - Cache hit for prefix 'search_books'
+2026-08-01 19:30:44 - booksage - DEBUG - Cache hit for prefix 'search_books'
+2026-08-01 19:30:44 - booksage - DEBUG - Cache hit for prefix 'search_books'
+2026-08-01 19:30:44 - booksage - DEBUG - Cache hit for prefix 'search_books'
+2026-08-01 19:30:44 - booksage - DEBUG - Cache hit for prefix 'search_books'
+2026-08-01 19:30:44 - booksage - DEBUG - Cache hit for prefix 'search_books'
+2026-08-01 19:30:44 - booksage - DEBUG - Cache hit for prefix 'search_books'
+2026-08-01 19:30:44 - booksage - DEBUG - Cache hit for prefix 'search_books'
+2026-08-01 19:30:44 - booksage - DEBUG - Cache hit for prefix 'search_books'
+2026-08-01 19:30:44 - booksage - DEBUG - Cache hit for prefix 'search_books'
+2026-08-01 19:30:45 - booksage - DEBUG - Cache hit for prefix 'search_books'
+2026-08-01 19:30:45 - booksage - DEBUG - Cache hit for prefix 'search_books'
+2026-08-01 19:30:45 - booksage - DEBUG - Cache hit for prefix 'search_books'
+2026-08-01 19:30:45 - booksage - DEBUG - Cache hit for prefix 'search_books'
+2026-08-01 19:30:45 - booksage - DEBUG - Cache hit for prefix 'search_books'
+2026-08-01 19:30:45 - booksage - DEBUG - Cache hit for prefix 'search_books'
+2026-08-01 19:30:45 - booksage - DEBUG - Cache hit for prefix 'search_books'
+2026-08-01 19:30:45 - booksage - DEBUG - Cache hit for prefix 'search_books'
+2026-08-01 19:30:45 - booksage - DEBUG - Cache hit for prefix 'search_books'
+2026-08-01 19:30:45 - booksage - DEBUG - Cache hit for prefix 'search_books'
+2026-08-01 19:30:45 - booksage - DEBUG - Cache hit for prefix 'search_books'
+2026-08-01 19:30:45 - booksage - DEBUG - Cache hit for prefix 'search_books'
+2026-08-01 19:30:45 - booksage - DEBUG - Cache hit for prefix 'search_books'
+2026-08-01 19:30:45 - booksage - DEBUG - Cache hit for prefix 'search_books'
+2026-08-01 19:30:45 - booksage - DEBUG - Cache hit for prefix 'search_books'
+2026-08-01 19:30:45 - booksage - DEBUG - Cache hit for prefix 'search_books'
+2026-08-01 19:30:45 - booksage - DEBUG - Cache hit for prefix 'search_books'
+2026-08-01 19:30:45 - booksage - DEBUG - Cache hit for prefix 'search_books'
+2026-08-01 19:30:45 - booksage - DEBUG - Cache hit for prefix 'search_books'
+2026-08-01 19:30:45 - booksage - DEBUG - Cache hit for prefix 'search_books'
+2026-08-01 19:30:45 - booksage - DEBUG - Cache hit for prefix 'search_books'
+2026-08-01 19:30:45 - booksage - DEBUG - Cache hit for prefix 'search_books'
+2026-08-01 19:30:45 - booksage - DEBUG - Cache hit for prefix 'search_books'
+2026-08-01 19:30:45 - booksage - DEBUG - Cache hit for prefix 'search_books'
+2026-08-01 19:30:46 - booksage - DEBUG - Cache hit for prefix 'search_books'
+2026-08-01 19:30:46 - booksage - DEBUG - Cache hit for prefix 'search_books'
+2026-08-01 19:30:46 - booksage - WARNING - Rate limit exceeded for 10.0.0.1 on /api/search_books
+2026-08-01 19:30:46 - booksage - DEBUG - Cache hit for prefix 'search_books'
+2026-08-01 19:30:47 - booksage - INFO - Generated 1 hybrid recommendations for 'The Great Gatsby'
+2026-08-01 19:30:47 - booksage - DEBUG - Cache hit for prefix 'recommend'
+2026-08-01 19:30:47 - booksage - INFO - Generated 1 hybrid recommendations for 'The Great Gatsby'
+2026-08-01 19:30:47 - booksage - DEBUG - Cache hit for prefix 'recommend'
+2026-08-01 19:30:47 - booksage - INFO - Generated 1 hybrid recommendations for 'The Great Gatsby'
+2026-08-01 19:30:47 - booksage - DEBUG - Cache hit for prefix 'recommend'
+2026-08-01 19:30:47 - booksage - INFO - Generated 1 hybrid recommendations for 'The Great Gatsby'
+2026-08-01 19:30:48 - booksage - DEBUG - Cache hit for prefix 'recommend'
+2026-08-01 19:30:48 - booksage - INFO - Generated 1 hybrid recommendations for 'The Great Gatsby'
+2026-08-01 19:30:48 - booksage - DEBUG - Cache hit for prefix 'recommend'
+2026-08-01 19:30:48 - booksage - INFO - Generated 1 hybrid recommendations for 'The Great Gatsby'
+2026-08-01 19:30:48 - booksage - DEBUG - Cache hit for prefix 'recommend'
+2026-08-01 19:30:48 - booksage - INFO - Generated 1 hybrid recommendations for 'The Great Gatsby'
+2026-08-01 19:30:48 - booksage - DEBUG - Cache hit for prefix 'recommend'
+2026-08-01 19:30:48 - booksage - INFO - Generated 1 hybrid recommendations for 'The Great Gatsby'
+2026-08-01 19:30:48 - booksage - DEBUG - Cache hit for prefix 'recommend'
+2026-08-01 19:30:48 - booksage - INFO - Generated 1 hybrid recommendations for 'The Great Gatsby'
+2026-08-01 19:30:48 - booksage - DEBUG - Cache hit for prefix 'recommend'
+2026-08-01 19:30:48 - booksage - INFO - Generated 1 hybrid recommendations for 'The Great Gatsby'
+2026-08-01 19:30:48 - booksage - DEBUG - Cache hit for prefix 'recommend'
+2026-08-01 19:30:48 - booksage - INFO - Generated 1 hybrid recommendations for 'The Great Gatsby'
+2026-08-01 19:30:48 - booksage - DEBUG - Cache hit for prefix 'recommend'
+2026-08-01 19:30:48 - booksage - INFO - Generated 1 hybrid recommendations for 'The Great Gatsby'
+2026-08-01 19:30:48 - booksage - DEBUG - Cache hit for prefix 'recommend'
+2026-08-01 19:30:48 - booksage - INFO - Generated 1 hybrid recommendations for 'The Great Gatsby'
+2026-08-01 19:30:48 - booksage - DEBUG - Cache hit for prefix 'recommend'
+2026-08-01 19:30:48 - booksage - INFO - Generated 1 hybrid recommendations for 'The Great Gatsby'
+2026-08-01 19:30:48 - booksage - DEBUG - Cache hit for prefix 'recommend'
+2026-08-01 19:30:48 - booksage - INFO - Generated 1 hybrid recommendations for 'The Great Gatsby'
+2026-08-01 19:30:48 - booksage - DEBUG - Cache hit for prefix 'recommend'
+2026-08-01 19:30:48 - booksage - INFO - Generated 1 hybrid recommendations for 'The Great Gatsby'
+2026-08-01 19:30:48 - booksage - DEBUG - Cache hit for prefix 'recommend'
+2026-08-01 19:30:48 - booksage - INFO - Generated 1 hybrid recommendations for 'The Great Gatsby'
+2026-08-01 19:30:48 - booksage - DEBUG - Cache hit for prefix 'recommend'
+2026-08-01 19:30:48 - booksage - INFO - Generated 1 hybrid recommendations for 'The Great Gatsby'
+2026-08-01 19:30:48 - booksage - DEBUG - Cache hit for prefix 'recommend'
+2026-08-01 19:30:48 - booksage - INFO - Generated 1 hybrid recommendations for 'The Great Gatsby'
+2026-08-01 19:30:48 - booksage - DEBUG - Cache hit for prefix 'recommend'
+2026-08-01 19:30:48 - booksage - INFO - Generated 1 hybrid recommendations for 'The Great Gatsby'
+2026-08-01 19:30:48 - booksage - DEBUG - Cache hit for prefix 'recommend'
+2026-08-01 19:30:48 - booksage - INFO - Generated 1 hybrid recommendations for 'The Great Gatsby'
+2026-08-01 19:30:48 - booksage - DEBUG - Cache hit for prefix 'recommend'
+2026-08-01 19:30:48 - booksage - INFO - Generated 1 hybrid recommendations for 'The Great Gatsby'
+2026-08-01 19:30:48 - booksage - DEBUG - Cache hit for prefix 'recommend'
+2026-08-01 19:30:48 - booksage - INFO - Generated 1 hybrid recommendations for 'The Great Gatsby'
+2026-08-01 19:30:48 - booksage - DEBUG - Cache hit for prefix 'recommend'
+2026-08-01 19:30:48 - booksage - INFO - Generated 1 hybrid recommendations for 'The Great Gatsby'
+2026-08-01 19:30:48 - booksage - DEBUG - Cache hit for prefix 'recommend'
+2026-08-01 19:30:48 - booksage - INFO - Generated 1 hybrid recommendations for 'The Great Gatsby'
+2026-08-01 19:30:48 - booksage - DEBUG - Cache hit for prefix 'recommend'
+2026-08-01 19:30:48 - booksage - INFO - Generated 1 hybrid recommendations for 'The Great Gatsby'
+2026-08-01 19:30:48 - booksage - DEBUG - Cache hit for prefix 'recommend'
+2026-08-01 19:30:48 - booksage - INFO - Generated 1 hybrid recommendations for 'The Great Gatsby'
+2026-08-01 19:30:48 - booksage - DEBUG - Cache hit for prefix 'recommend'
+2026-08-01 19:30:48 - booksage - INFO - Generated 1 hybrid recommendations for 'The Great Gatsby'
+2026-08-01 19:30:48 - booksage - DEBUG - Cache hit for prefix 'recommend'
+2026-08-01 19:30:48 - booksage - INFO - Generated 1 hybrid recommendations for 'The Great Gatsby'
+2026-08-01 19:30:48 - booksage - DEBUG - Cache hit for prefix 'recommend'
+2026-08-01 19:30:48 - booksage - INFO - Generated 1 hybrid recommendations for 'The Great Gatsby'
+2026-08-01 19:30:48 - booksage - DEBUG - Cache hit for prefix 'recommend'
+2026-08-01 19:30:48 - booksage - INFO - Generated 1 hybrid recommendations for 'The Great Gatsby'
+2026-08-01 19:30:48 - booksage - DEBUG - Cache hit for prefix 'recommend'
+2026-08-01 19:30:48 - booksage - INFO - Generated 1 hybrid recommendations for 'The Great Gatsby'
+2026-08-01 19:30:48 - booksage - DEBUG - Cache hit for prefix 'recommend'
+2026-08-01 19:30:48 - booksage - INFO - Generated 1 hybrid recommendations for 'The Great Gatsby'
+2026-08-01 19:30:48 - booksage - DEBUG - Cache hit for prefix 'recommend'
+2026-08-01 19:30:48 - booksage - INFO - Generated 1 hybrid recommendations for 'The Great Gatsby'
+2026-08-01 19:30:48 - booksage - DEBUG - Cache hit for prefix 'recommend'
+2026-08-01 19:30:48 - booksage - INFO - Generated 1 hybrid recommendations for 'The Great Gatsby'
+2026-08-01 19:30:48 - booksage - WARNING - Models not trained or loaded
+2026-08-01 19:30:48 - booksage - WARNING - Invalid method. Use 'collaborative', 'content', or 'hybrid'
+2026-08-01 19:30:48 - booksage - WARNING - Models not trained or loaded
+2026-08-01 19:30:48 - booksage - WARNING - Models not trained or loaded
+2026-08-01 19:30:49 - booksage - INFO - Checking for existing trained models...
+2026-08-01 19:30:49 - booksage - WARNING - No trained models found
+2026-08-01 19:30:49 - booksage - INFO - Checking for existing trained models...
+2026-08-01 19:30:49 - booksage - INFO - Models loaded successfully!
+2026-08-01 19:30:49 - booksage - INFO - ============================================================
+2026-08-01 19:30:49 - booksage - INFO - Starting model training...
+2026-08-01 19:30:49 - booksage - INFO - ============================================================
+2026-08-01 19:30:49 - booksage - INFO - 1. Loading data...
+2026-08-01 19:30:49 - booksage - ERROR - Failed to load data
+2026-08-01 19:30:49 - booksage - INFO - ============================================================
+2026-08-01 19:30:49 - booksage - INFO - Starting model training...
+2026-08-01 19:30:49 - booksage - INFO - ============================================================
+2026-08-01 19:30:49 - booksage - INFO - 1. Loading data...
+2026-08-01 19:30:49 - booksage - INFO - 2. Preprocessing data...
+2026-08-01 19:30:49 - booksage - INFO - 3. Training collaborative filtering model...
+2026-08-01 19:30:49 - booksage - INFO - 4. Training content-based model...
+2026-08-01 19:30:49 - booksage - INFO - 5. Creating hybrid model...
+2026-08-01 19:30:49 - booksage - INFO - 6. Saving models...
+2026-08-01 19:30:49 - booksage - INFO - ============================================================
+2026-08-01 19:30:49 - booksage - INFO - Model training completed successfully!
+2026-08-01 19:30:49 - booksage - INFO - ============================================================
+2026-08-01 19:30:49 - booksage - INFO - ============================================================
+2026-08-01 19:30:49 - booksage - INFO - Starting model training...
+2026-08-01 19:30:49 - booksage - INFO - ============================================================
+2026-08-01 19:30:49 - booksage - INFO - 1. Loading data...
+2026-08-01 19:30:49 - booksage - INFO - 2. Preprocessing data...
+2026-08-01 19:30:49 - booksage - INFO - 3. Training collaborative filtering model...
+2026-08-01 19:30:49 - booksage - INFO - 4. Training content-based model...
+2026-08-01 19:30:49 - booksage - INFO - 5. Creating hybrid model...
+2026-08-01 19:30:49 - booksage - INFO - 6. Saving models...
+2026-08-01 19:30:49 - booksage - ERROR - Failed to save models
+2026-08-01 19:30:49 - booksage - INFO - Checking for existing trained models...
+2026-08-01 19:30:49 - booksage - ERROR - Failed to load models
+2026-08-01 19:30:51 - booksage - INFO - Generated 10 content recommendations for 'The Lovely Bones: A Novel'
+2026-08-01 19:31:04 - booksage - DEBUG - Search for 'th' returned 9 results
+2026-08-01 19:31:04 - booksage - DEBUG - Search for 'the' returned 9 results
+2026-08-01 19:31:05 - booksage - DEBUG - Cache hit for prefix 'search_books'
+2026-08-01 19:31:06 - booksage - DEBUG - Search for 'the k' returned 7 results
+2026-08-01 19:31:06 - booksage - DEBUG - Search for 'the ki' returned 5 results
+2026-08-01 19:31:07 - booksage - DEBUG - Search for 'the kis' returned 9 results
+2026-08-01 19:31:08 - booksage - DEBUG - Search for 'the kiss' returned 9 results
+2026-08-01 19:31:14 - booksage - INFO - Generated 10 content recommendations for 'The Kiss'

@@ -1,0 +1,13 @@
+# Bind-mounted by docker-compose at runtime; no need to bake into the image
+app/data
+app/models
+app/logs
+
+# Local environments and caches
+.venv
+venv
+__pycache__
+*.pyc
+.pytest_cache
+.coverage
+htmlcov

@@ -16,7 +16,7 @@
   <a href="https://www.docker.com/"><img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker"></a>
 </p>
 
-BookSage AI is a **hybrid book recommendation system** combining **Collaborative Filtering (KNN-based)** and **Content-Based (TF-IDF + Cosine Similarity)** models, with a weighted hybrid approach for personalized results. The project ingests and preprocesses large-scale book datasets, applies active-user and popular-book filtering, and dynamically generates recommendations enriched with metadata (title, author, publisher, year, and cover image). I engineered a **modern, monolithic architecture** with separate **FastAPI JSON API** and **React (Tailwind/DaisyUI) Frontend**, ensuring scalability and maintainability. The system is fully containerized with **Docker**, featuring automated orchestration and a robust **CI/CD pipeline** with 100% backend test coverage and comprehensive frontend unit tests. This design demonstrates proficiency in **ML model building, asynchronous API development, modern SPA implementation, containerization, and industry-grade deployment workflows**.
+BookSage AI is a **hybrid book recommendation system** combining **Collaborative Filtering (KNN-based)** and **Content-Based (TF-IDF + Cosine Similarity)** models, with a weighted hybrid approach for personalized results. The project ingests and preprocesses large-scale book datasets, applies active-user and popular-book filtering, and dynamically generates recommendations enriched with metadata (title, author, publisher, year, and cover image). I engineered a **modern, monolithic architecture** with separate **FastAPI JSON API** and **React (Tailwind) Frontend**, ensuring scalability and maintainability. The system is fully containerized with **Docker**, featuring automated orchestration and a robust **CI/CD pipeline** with 100% backend test coverage and comprehensive frontend unit tests. This design demonstrates proficiency in **ML model building, asynchronous API development, modern SPA implementation, containerization, and industry-grade deployment workflows**.
 
 <div align="center">
   <video src="https://github.com/user-attachments/assets/648d13d4-12d7-4fbe-95ca-a7684430016f" width="100%" controls>
@@ -54,7 +54,9 @@ BookSage AI is a **hybrid book recommendation system** combining **Collaborative
 | **Data Sources**            | Book-Crossing Dataset (`BX-Books`, `BX-Users`, `BX-Ratings`)                              |
 | **Feature Engineering**     | TF-IDF on combined features (`title`, `author`, `publisher`, `year`)                      |
 | **Model Persistence**       | Pickle (Model & Processed Data Serialization)                                             |
-| **Memory System**           | In-memory caching of processed data for faster responses                                  |
+| **Memory System**           | In-memory caching of processed data (models) plus a TTL response cache (API layer)         |
+| **Caching Layer**           | `cachetools` TTLCache, thread-safe in-memory response cache (no Redis)                     |
+| **Rate Limiting**           | `slowapi` request throttling, `X-Forwarded-For`-aware client keying                        |
 | **Evaluation Metrics**      | Popularity-based filtering, Active user filtering                                         |
 | **Orchestration Layer**     | Modular service classes (`DataLoader`, `DataPreprocessor`, `ModelManager`, `HybridModel`) |
 | **Frontend**                | React 19, Vite, Tailwind CSS, DaisyUI, Framer Motion                      |
@@ -72,6 +74,8 @@ BookSage AI is a **hybrid book recommendation system** combining **Collaborative
 | Cold Start Handling | Popular books fallback | Often fails |
 | Explainability | Shows scores + metadata | Black-box results |
 | UI Customization | Adjustable weights/counts | Fixed parameters |
+| Response Caching | TTL in-memory cache on read endpoints | Often uncached or requires Redis |
+| Abuse Protection | Per-client rate limiting (`slowapi`) | Frequently absent |
 
 ---
 
@@ -86,6 +90,7 @@ BookSage-AI/
 ├── backend/                     # FastAPI Backend service
 │   ├── app/                     # Core application package
 │   │   ├── core/                # Configuration and system-wide utilities
+│   │   │   ├── cache.py         # In-memory TTL response cache
 │   │   │   ├── config.py
 │   │   │   ├── logger.py
 │   │   │   ├── models.py
@@ -119,6 +124,7 @@ BookSage-AI/
 │   │   └── train_models.py      # Script to retrain recommendation models
 │   ├── tests/                   # Backend testing suite
 │   │   ├── conftest.py
+│   │   ├── test_cache.py        # TTL cache unit tests
 │   │   ├── test_collaborative_model.py
 │   │   ├── test_config.py
 │   │   ├── test_content_model.py
@@ -129,6 +135,7 @@ BookSage-AI/
 │   │   ├── test_logger.py
 │   │   ├── test_model_manager.py
 │   │   ├── test_models.py
+│   │   ├── test_rate_limit.py   # slowapi rate limiting tests
 │   │   ├── test_recommendation_engine.py
 │   │   └── __init__.py
 │   ├── Dockerfile               # Backend containerization
@@ -188,7 +195,9 @@ graph TD
     E --> G[Hybrid Recommender - Weighted Score Fusion]
     F --> G
     
-    G --> H[FastAPI JSON API - Endpoints for Recommendations]
+    G --> L[Rate Limiter - slowapi, X-Forwarded-For aware]
+    L --> M[TTL Response Cache - cachetools, in-memory]
+    M --> H[FastAPI JSON API - Endpoints for Recommendations]
     H --> I[Frontend: React SPA + Tailwind/DaisyUI]
     
     subgraph Deployment
@@ -222,7 +231,6 @@ cd BookSage-AI
 python run.py
 ```
 
-> [!TIP]
 > The script will automatically detect if `node_modules` or Python packages are missing and install them for you before starting the services.
 
 ### Running the Application
@@ -249,12 +257,35 @@ cd frontend && npm run dev
 
 ## API Endpoints (FastAPI)
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/api/popular` | Get popular books (JSON) |
-| POST | `/api/recommend` | Get book recommendations (JSON) |
-| GET | `/api/search_books` | Search books by title (JSON) |
-| GET | `/api/health` | Health check endpoint |
+| Method | Endpoint | Description | Rate Limit | Cache TTL |
+|--------|----------|-------------|------------|-----------|
+| GET | `/api/popular` | Get popular books (JSON) | 60/minute | 24h (86400s) |
+| POST | `/api/recommend` | Get book recommendations (JSON) | 30/minute | 1h (3600s) |
+| GET | `/api/search_books` | Search books by title (JSON) | 60/minute | 1h (3600s) |
+| GET | `/api/health` | Health check endpoint | None | Not cached |
+
+## Caching & Rate Limiting
+
+**Configuration** (`backend/app/core/config.py`), all optional with sensible local-dev defaults:
+
+| Variable | Default | Purpose |
+|----------|---------|---------|
+| `CACHE_ENABLED` | `True` | Master on/off switch for response caching |
+| `CACHE_TTL_SECONDS` | `3600` | TTL for `/api/recommend` and `/api/search_books` |
+| `CACHE_MAXSIZE` | `1000` | Max entries per cache bucket before LRU-style eviction |
+| `POPULAR_CACHE_TTL_SECONDS` | `86400` | TTL for `/api/popular` (effectively static data) |
+| `RATE_LIMIT_ENABLED` | `True` | Master on/off switch for rate limiting |
+| `RATE_LIMIT_RECOMMEND` | `"30/minute"` | Limit applied to `POST /api/recommend` |
+| `RATE_LIMIT_SEARCH` | `"60/minute"` | Limit applied to `GET /api/search_books` |
+| `RATE_LIMIT_POPULAR` | `"60/minute"` | Limit applied to `GET /api/popular` |
+
+**429 behavior.** Exceeding a limit returns HTTP 429 with a `Retry-After` header and a clean JSON body:
+
+```json
+{ "detail": "Rate limit exceeded. Please try again shortly." }
+```
+
+The event is also logged through the project's existing logger for observability.
 
 ## Docker
 

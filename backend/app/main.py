@@ -3,10 +3,14 @@ from contextlib import asynccontextmanager
 from typing import Any
 
 import pandas as pd
-from fastapi import FastAPI, Form, Query
+from fastapi import FastAPI, Form, Query, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
+from slowapi import Limiter
+from slowapi.errors import RateLimitExceeded
+from slowapi.util import get_remote_address
 
+from app.core.cache import cached
 from app.core.config import Config
 from app.core.logger import logger
 from app.services.recommendation_engine import RecommendationEngine
@@ -56,8 +60,52 @@ app.add_middleware(
 )
 
 
+def get_client_ip(request: Request) -> str:
+    """Resolve the rate-limiting key, preferring the first X-Forwarded-For hop."""
+    forwarded_for = request.headers.get("X-Forwarded-For")
+    if forwarded_for:
+        return forwarded_for.split(",")[0].strip()
+    return get_remote_address(request)
+
+
+limiter = Limiter(key_func=get_client_ip, enabled=Config.RATE_LIMIT_ENABLED)
+app.state.limiter = limiter
+
+
+@app.exception_handler(RateLimitExceeded)
+async def rate_limit_exceeded_handler(
+    request: Request, exc: RateLimitExceeded
+) -> JSONResponse:
+    """Return a clean JSON error body with a Retry-After header on 429."""
+    retry_after = exc.limit.limit.get_expiry()
+    logger.warning(
+        f"Rate limit exceeded for {get_client_ip(request)} "
+        f"on {request.url.path}"
+    )
+    response = JSONResponse(
+        status_code=429,
+        content={"detail": "Rate limit exceeded. Please try again shortly."},
+    )
+    response.headers["Retry-After"] = str(retry_after)
+    return response
+
+
+@cached("recommend")
+def _get_cached_recommendations(
+    book_title: str, method: str
+) -> list[dict[str, Any]]:
+    """Compute recommendations for a book/method pair (cached)."""
+    return engine.get_recommendations(
+        book_title=book_title,
+        method=method,
+        top_n=10
+    )
+
+
 @app.get("/api/popular", response_class=JSONResponse)
-async def get_popular_books() -> list[dict[str, Any]]:
+@limiter.limit(Config.RATE_LIMIT_POPULAR)
+@cached("popular", ttl=Config.POPULAR_CACHE_TTL_SECONDS)
+def get_popular_books(request: Request) -> list[dict[str, Any]]:
     """Get popular books."""
     popular_books = []
     if engine and engine.is_trained:
@@ -66,7 +114,9 @@ async def get_popular_books() -> list[dict[str, Any]]:
 
 
 @app.post("/api/recommend", response_class=JSONResponse)
-async def recommend(
+@limiter.limit(Config.RATE_LIMIT_RECOMMEND)
+def recommend(
+    request: Request,
     book_title: str = Form(...),
     method: str = Form(default="hybrid")
 ) -> dict[str, Any]:
@@ -79,11 +129,7 @@ async def recommend(
         selected_book = engine.get_book_info(book_title)
 
         # Get recommendations
-        recommendations = engine.get_recommendations(
-            book_title=book_title,
-            method=method,
-            top_n=10
-        )
+        recommendations = _get_cached_recommendations(book_title, method)
         logger.info(
             f"Generated {len(recommendations)} {method} recommendations "
             f"for '{book_title}'"
@@ -98,7 +144,10 @@ async def recommend(
 
 
 @app.get("/api/search_books", response_class=JSONResponse)
-async def search_books(
+@limiter.limit(Config.RATE_LIMIT_SEARCH)
+@cached("search_books")
+def search_books(
+    request: Request,
     query: str = Query(default="")
 ) -> list[dict[str, Any]]:
     """
