@@ -16,7 +16,9 @@
   <a href="https://www.docker.com/"><img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker"></a>
 </p>
 
-BookSage AI is a **hybrid book recommendation system** combining **Collaborative Filtering (KNN-based)** and **Content-Based (TF-IDF + Cosine Similarity)** models, with a weighted hybrid approach for personalized results. The project ingests and preprocesses large-scale book datasets, applies active-user and popular-book filtering, and dynamically generates recommendations enriched with metadata (title, author, publisher, year, and cover image). I engineered a **modern, monolithic architecture** with separate **FastAPI JSON API** and **React (Tailwind) Frontend**, ensuring scalability and maintainability. The system is fully containerized with **Docker**, featuring automated orchestration and a robust **CI/CD pipeline** with 100% backend test coverage and comprehensive frontend unit tests. This design demonstrates proficiency in **ML model building, asynchronous API development, modern SPA implementation, containerization, and industry-grade deployment workflows**.
+After finishing a book, most readers are stuck scrolling bestseller lists or wading through reviews, hoping something clicks. BookSage AI turns a book someone liked into a ranked list of others worth reading, by weighing what similar readers rated highly against what the book is actually about — its subject, author, and style. Every suggestion **shows the score behind it**, and if it doesn't recognize a title, it returns nothing rather than a fabricated guess. Built and tested to the same standard as **production software**, it's ready to sit inside a bookstore, library, or reading app as a real feature — not a weekend demo.
+
+Under the hood, BookSage AI is a decoupled system — a **FastAPI** JSON API served independently from a **React 19** single-page app built with Vite and Tailwind/DaisyUI, talking to it only through a JSON API contract. Its recommendation core fuses a **scikit-learn** k-nearest-neighbors model over a SciPy sparse user-item matrix with a **TF-IDF**/cosine-similarity content model, combined through a configurable weighted-average fusion trained on the 1.1-million-rating Book-Crossing dataset. Both are wrapped in an in-memory **cachetools** TTL cache (no Redis required) and **slowapi** rate limiting, alongside pandas/NumPy preprocessing, pickled model persistence, structured logging, Framer Motion animations, and Docker images for each service orchestrated via docker-compose. A GitHub Actions pipeline enforces 100% backend coverage and a full frontend test suite on every push, so **the codebase can be extended or handed to a new team without the usual leap of faith**.
 
 <div align="center">
   <video src="https://github.com/user-attachments/assets/648d13d4-12d7-4fbe-95ca-a7684430016f" width="100%" controls>
@@ -332,7 +334,8 @@ Our GitHub Actions pipeline (`.github/workflows/main.yml`) automatically perform
 **Prepared by:**  
 
 **Md Emon Hasan**  
-**Email:** [emon.mlengineer@gmail.com](mailto:emon.mlengineer@gmail.com)
+**Email:** [emon.mlengineer@gmail.com](mailto:emon.mlengineer@gmail.com)  
+**Portfolio:** [Md-Emon-Hasan](https://emonlabs-ai.hitechparks.com/)  
 **WhatsApp:** [+8801834363533](https://wa.me/8801834363533)  
 **GitHub:** [Md-Emon-Hasan](https://github.com/Md-Emon-Hasan)  
 **LinkedIn:** [Md Emon Hasan](https://www.linkedin.com/in/md-emon-hasan-695483237/)  
